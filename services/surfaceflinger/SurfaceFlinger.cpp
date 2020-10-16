@@ -559,6 +559,9 @@ SurfaceFlinger::SurfaceFlinger(Factory& factory) : SurfaceFlinger(factory, SkipI
     property_get("debug.sf.disable_client_composition_cache", value, "0");
     mDisableClientCompositionCache = atoi(value);
 
+    property_get("debug.sf.disable_hwc_overlays", value, "0");
+    mDebugDisableHWC = atoi(value);
+
     char property[PROPERTY_VALUE_MAX] = {0};
     if((property_get("vendor.display.vsync_reliable_on_doze", property, "0") > 0) &&
         (!strncmp(property, "1", PROPERTY_VALUE_MAX ) ||
