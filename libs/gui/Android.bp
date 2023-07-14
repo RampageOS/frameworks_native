@@ -273,4 +273,10 @@ cc_library_static {
     ],
 }
 
+cc_library_shared {
+    name: "libgui_vendor",
+    vendor: true,
+    defaults: ["libgui_defaults"]
+}
+
 subdirs = ["tests"]
